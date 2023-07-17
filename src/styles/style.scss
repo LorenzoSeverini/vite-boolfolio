@@ -1,0 +1,59 @@
+@import './partials/__variables.scss';
+@import './partials/__mixin.scss';
+
+/********* Reset *********/
+/*************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-tertiary);
+}
+
+/*********/
+/* Style */
+/*********/
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10vh 80vh 10vh;
+
+  header {
+    width: 100%;
+    // height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+
+    h1 {
+      font-size: 2rem;
+    }
+  
+  }
+  
+  main {
+    width: 100%;
+    // height: 80vh;
+    background-color: var(--color-tertiary);
+  }
+  
+  footer {
+    width: 100%;
+    // height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secondary);
+    border-top: 1px solid var(--color-border);
+    color: var( --color-text-dark);
+  }
+}
