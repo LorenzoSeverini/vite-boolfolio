@@ -149,73 +149,84 @@ export default {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-gap: 2rem;
   padding: 1rem;
   overflow-y: auto;
+  overflow-x: hidden;
 
-    .card {
-      width: 100%;
-      height: 100%;
+  @media (max-width: 48rem) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 75rem) {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    max-width: 75rem;
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    color: var(--color-text-dark);
+    padding: 1rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    .card-title {
       display: flex;
-      flex-direction: column;
-      background-color: var(--color-primary);
-      border: 1px solid var(--color-border);
-      border-radius: 5px;
-      color: var(--color-text-dark);
-      padding: 1rem;
-      transition: all 0.3s ease-in-out;
-      cursor: pointer;
-
-      .card-title {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem 0;
-
-        h2 {
-          font-size: 1.5rem;
-          margin-bottom: 1rem;
-        }
-      }
-
-      .img-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem 1rem; 
-
-        img {
-          width: 100%;
-          height: 12.5rem;
-          object-fit: cover;
-          border-radius: 5px;
-        }
-      }
-
-      .card-text {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem 0;
-
-        p {
-          font-size: 1rem;
-          margin-bottom: 1rem;
-        }
-      }
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 0;
 
       h2 {
         font-size: 1.5rem;
         margin-bottom: 1rem;
       }
+    }
+
+    .img-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 1rem; 
+
+      img {
+        width: 100%;
+        height: 12.5rem;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+    }
+
+    .card-text {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 0;
 
       p {
         font-size: 1rem;
         margin-bottom: 1rem;
       }
     }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
   }
 
   .pagination {
@@ -261,6 +272,5 @@ export default {
     font-size: 1.5rem;
     color: var(--color-text-white);
   }
-
 }
 </style>
