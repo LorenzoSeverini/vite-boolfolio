@@ -8,20 +8,6 @@ export default {
     HeaderTitle,
     ProjectCard,
   },
-  
-  data() {
-    return {
-      //
-    }
-  },
-
-  methods: {
-    // 
-  },
-
-  mounted() {
-    // 
-  },
 }
 
 </script>
