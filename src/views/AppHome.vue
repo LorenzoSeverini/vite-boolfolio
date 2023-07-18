@@ -1,11 +1,13 @@
 <script>
 import HeaderTitle from '../components/header/HeaderTitle.vue';
 import FooterNav from '../components/footer/FooterNav.vue';
+import HomePage from '../components/home/HomePage.vue';
 
 export default {
   name: 'AppHome',
     components: {
         HeaderTitle,
+        HomePage,
         FooterNav,
     },
 }
@@ -18,7 +20,7 @@ export default {
         </header>
     
         <main>
-            <h1>Home</h1>
+            <HomePage />
         </main>
         
         <footer>

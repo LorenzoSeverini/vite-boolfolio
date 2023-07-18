@@ -4,18 +4,6 @@ export default {
   props: {
     msg: String,
   },
-
-  data() {
-    //
-  },
-
-  methods: {
-    //  
-  },
-
-  mounted() {
-    // 
-  }
 }
 </script>
 
