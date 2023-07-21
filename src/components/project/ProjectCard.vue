@@ -1,13 +1,13 @@
 <script>
 import axios from 'axios';
+import { store } from '../../store/store.js';
 
 export default {
   name: 'ProjectCard',
 
   data() {
     return {
-      apiUrl:'http://localhost:8000/api/',
-      apiPath: 'projects',
+      store,
       loading: false,
       projects: [],
       projectsCurrentPage: 0,
@@ -22,7 +22,7 @@ export default {
      
       this.loading = true;
 
-      axios.get(this.apiUrl + this.apiPath).then(response => {
+      axios.get(this.store.apiUrl + "projects").then(response => {
         console.log(response.data);
         // ***************************************
         this.projects = response.data.results.data;
@@ -32,13 +32,13 @@ export default {
       }).catch(error => {
         console.log(error);
         this.loading = false;
-        this.loadingError = true;
+        this.loadingError = error.message;
+        this.router.push({ name: 'ErrorNotFound', params: { code: 404 } });
       });
     },
 
     getProjectsPage(pageNumber) { {
 
-      
       if(pageNumber && pageNumber > 0 && pageNumber <= this.projectsTotalPages) {
         
         let config = {
@@ -49,7 +49,7 @@ export default {
       
         this.loading = true;
 
-        axios.get(this.apiUrl + this.apiPath, config).then(response => {
+        axios.get(this.store.apiUrl + "projects", config).then(response => {
           console.log(response.data);
           // ***************************************
           this.projects = response.data.results.data;
@@ -59,7 +59,7 @@ export default {
         }).catch(error => {
           console.log(error);
           this.loading = false;
-          this.loadingError = true;
+          this.loadingError = error.message;
         });  
 
         } else {
@@ -94,6 +94,11 @@ export default {
     <div class="card-container">
       <!-- card -->
       <div class="card" v-for="project in projects">
+        <!-- router link to single project page with id  -->
+        <h4>Project {{ project.id }}</h4>
+        <p>
+          <router-link :to="{ name: 'SingleProject', params: { id: project.id } }">{{ project.title }}</router-link>
+        </p>
         <!-- card title -->
         <div class="card-title">
           <h2>{{ project.title }}</h2>
@@ -171,9 +176,9 @@ export default {
     display: flex;
     flex-direction: column;
     background-color: var(--color-primary);
-    border: 1px solid var(--color-border);
+    border: 3px solid var(--color-border);
     border-radius: 5px;
-    color: var(--color-text-dark);
+    color: var(--color-secondary);
     padding: 1rem;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
@@ -243,10 +248,10 @@ export default {
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      background-color: var(--color-primary);
+      background-color: var(--color-tertiary);
       border: 1px solid var(--color-border);
       border-radius: 5px;
-      color: var(--color-text-dark);
+      color: var(--color-text-white);
       padding: 1rem;
       transition: all 0.3s ease-in-out;
       cursor: pointer;
