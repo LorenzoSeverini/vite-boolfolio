@@ -41,21 +41,6 @@ export default {
             </li>
         </ul>
     </nav>
-    <!-- social icon links-->
-    <div class="social-container">
-        <ul class="social-links">
-            <li>
-                <a href="https://twitter.com" target="_blank" rel="noopener">
-                    <font-awesome-icon icon="twitter" size="2x" />
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com" target="_blank" rel="noopener">
-                    <font-awesome-icon icon="facebook" size="2x" />
-                </a>
-            </li>
-        </ul>
-    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -75,43 +60,14 @@ nav {
         li{
             a{
                 text-decoration: none;
-                color: var(--color-text-white);
+                color: var(--color-text-dark);
                 font-weight: 700;
                 font-size: 1rem;
                 transition: all 0.3s ease-in-out;
 
                 &:hover{
-                    color: var(--color-text-dark);
+                    color: var(--color-secondary);
 
-                }
-            }
-        }
-    }
-}
-
-.social-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .social-links {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        list-style: none;
-        gap: 1rem;
-        margin-top: 1rem;
-
-        li {
-            a {
-                text-decoration: none;
-                color: var(--color-text-white);
-                font-weight: 700;
-                font-size: 1rem;
-                transition: all 0.3s ease-in-out;
-
-                &:hover {
-                    color: var(--color-text-dark);
                 }
             }
         }
