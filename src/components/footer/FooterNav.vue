@@ -1,16 +1,7 @@
 <script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faTwitter, faFacebook } from '@fortawesome/free-brands-svg-icons';
-
-// Add the specific icons to the library
-library.add(faTwitter, faFacebook);
-
 export default {
     name: "FooterNav",
-    components: {
-        FontAwesomeIcon,
-    },
+
     data() {
         return {
             navItems: [
