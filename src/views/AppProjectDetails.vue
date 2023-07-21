@@ -16,7 +16,7 @@ export default {
 <template>
     <div class="container">
         <header>
-            <HeaderTitle />
+            <HeaderTitle msg="Hello 🫡" />
         </header>
 
         <main>

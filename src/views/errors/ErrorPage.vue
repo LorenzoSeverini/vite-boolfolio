@@ -17,8 +17,9 @@ export default {
 <template>
     <div class="error-container">
         <div class="error-title">
-            <h1>Error {{ $route.params.code }}</h1>
-            <p>{{ message }}</p>
+            <h1>Oops! {{ $route.params.code }}</h1>
+            <p>{{ errorMessage[$route.params.code] }}</p>
+            <p><router-link :to="{ name: 'ProjectsList' }">Back to projects list</router-link></p>
         </div>
     </div>
 </template>
