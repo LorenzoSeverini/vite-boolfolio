@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/AppHome.vue';
 import Contact from '../views/AppContact.vue';
 import ProjectList from '../views/AppProjectList.vue';
-import SingleProject from '../views/AppSingleProject.vue';
+import ProjectDetails from '../views/AppProjectDetails.vue';
 import ErrorPage from '../views/errors/ErrorPage.vue';
 
 
@@ -21,13 +21,13 @@ const router = createRouter({
         },
         {
             path: '/projects',
-            name: 'Projects',
+            name: 'ProjectsList',
             component: ProjectList,
         },
         {
             path: '/projects/:id',
-            name: 'SingleProject',
-            component: SingleProject,
+            name: 'ProjectDetails',
+            component: ProjectDetails,
         },
         {
             path: '/error/:code',
