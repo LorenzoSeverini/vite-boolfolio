@@ -97,7 +97,7 @@ export default {
         <!-- router link to single project page with id  -->
         <h4>Project {{ project.id }}</h4>
         <p>
-          <router-link :to="{ name: 'SingleProject', params: { id: project.id } }">{{ project.title }}</router-link>
+          <router-link :to="{ name: 'ProjectDetails', params: { id: project.id } }">{{ project.title }}</router-link>
         </p>
         <!-- card title -->
         <div class="card-title">
